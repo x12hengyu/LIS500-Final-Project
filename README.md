@@ -12,5 +12,7 @@ The email sending service is NOT available if the PHP server is run locally on w
 If you have any other questions and concerns, please contact:
 
 kshi42@wisc.edu for Shi, Kaiwen
+
 xyu345@wisc.edu for Yu, Xizheng
+
 jshim27@wisc.edu for Shim, Joonbo
