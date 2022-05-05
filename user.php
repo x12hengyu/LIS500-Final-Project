@@ -37,7 +37,7 @@ We hope to meet you on the event!
 Regards,
 
 Xizheng Yu, Kaiwen Shi, Joonbo Shim
-iSchool Retreat Team
+CSSCE Team
 ";
 $from = 'kshi42@wisc.edu';
  
