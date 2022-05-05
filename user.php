@@ -5,10 +5,10 @@
             $firstname = $_POST['name'];
             $lastname = $_POST['surname'];
             $email = $_POST['email'];
-            $field = $_POST['field'];
+            $date = $_POST['date'];
             $message = $_POST['message'];
 
-            $title="The Geek out of $firstname $lastname ";
+            $title="Registration Receipt of $firstname $lastname ";
             echo "<title>$title</title>";?>
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -16,34 +16,38 @@
         crossorigin="anonymous"/>
     </head> 
     <body>
-        <div class="container">
-            <?php echo "<h1> Welcome to $title </h1>";?><br/>
-            <p>
-                <?php echo "$firstname is interested to $field";?><br/>
-                <?php echo "Here are what $firstname interested to geek out:";?><br/>
-                <?php echo "$message";?><br/>
-                <?php echo "This is an image about $firstname's geekery:";?><br/>
-            </p>
-            <!--handle image upload-->
-            <?php
-            $target_dir = "uploads/";
-            if(!is_dir($target_dir)) {
-                mkdir($target_dir);
-            }
-            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-            // Check if file already exists
-            if (file_exists($target_file)) {
-                echo "<img src=\"$target_file\">";
-            } else {
-                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-                echo "<img src=\"$target_file\">";
-            }
-            // display the image
-            if ($_FILES['fileToUpload']['error'] == 1) {
-                echo "!!!Error!!!<br>";
-                echo 'The uploaded file exceeds the upload_max_filesize directive in php.ini.';
-            }
-            ?>
-        </div>
+        <?php echo "<h1> Thank you, $firstname $lastname, for registrating our event! </h1>";?>
+        <?php echo "You have choose our event on $date. <br>"?>
     </body>
 </html>
+
+<?php 
+// handling sending plain text email 
+$to = $email;
+$subject = $title;
+$message = 
+"
+Welcome, $firstname $lastname!
+
+You have choose: $date to attend the our event.
+
+
+We hope to meet you on the event!
+
+Regards,
+
+Shi Kaiwen, Yu Xizheng
+iSchool Retreat Team
+";
+$from = 'kshi42@wisc.edu';
+ 
+// Sending email confirmation
+if(mail($to, $subject, $message)){
+    echo 'The confirmation email with same content has been sent successfully.';
+} else{
+    echo 'Unable to send confirmation email. Please try again.';
+}
+
+echo '<br><a href="./index.html">Click this link to the main page.</a> <br>'
+
+?>

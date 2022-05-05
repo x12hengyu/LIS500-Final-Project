@@ -9,9 +9,28 @@
     </head>
 
     <body>
+        <div class="container pt-2 pb-2 bg-secondary">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <a href="./index.html" class="text-white">Home</a>
+                </div>
+                <div class="col-lg text-center">
+                    <a href="./schedule.html" class="text-white">Schedule</a>
+                </div>
+                <div class="col-lg text-center">
+                    <a href="./policies.html" class="text-white">Policies</a>
+                </div>
+                <div class="col-lg text-center">
+                    <a href="./register.html" class="text-white">Registration</a>
+                </div>
+                <div class="col-lg text-center">
+                    <a href="./contact.html" class="text-white">Contact</a>
+                </div>
+            </div>
+        </div>
         <form action="http://localhost:4040/user.php" method="post" enctype="multipart/form-data">
             <div class="container">
-                <h1>Code II: Let's all geek out!</h1>
+                <h1>Registration Form</h1>
                 <p> NOTE: "<span style="color:red">*</span>" means must filled in field </p>
                 <div class="form-group">
                     <label for="name">Firstname <span style="color:red;">*</span></label>
@@ -26,35 +45,30 @@
                     <input id="email" type="email" name="email" class="form-control" placeholder="Please enter your email" required="required" data-error="Valid email is required.">
                 </div>
                 <div class="form-group">
-                    <label for="field">Please select the field you are interested to geek out <span style="color:red;">*</span></label>
-                    <select id="field" name="field" class="form-control" required="required" data-error="Please specify your field.">
-                        <option selected>Choose...</option>
-                        <option>Humanities and Social science (Anthropology, History, Linguistics, Economics, Psycology...)</option>
-                        <option>Natural Sciences (Biology, Chemistry, Physics...)</option>
-                        <option>Formal Sciences (Computer Science, Mathmatics...)</option>
-                        <option>Professions and Applied Sciences (Agriculture, Business, Education, Law...)</option>
+                    <label for="date">Please select the date you are interested register a conference <span style="color:red;">*</span></label>
+                    <select id="date" name="date" class="form-control" required="required" data-error="Please specify your date.">
+                        <option selected>Sunday</option>
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="msg">Your Geekery Story <span style="color:red;">*</span></label>
-                    <textarea id="msg" name="message" class="form-control" placeholder="Tell us about your own geekery" rows="4" required="required" data-error="Geekery message is required"></textarea>
+                    <label for="msg">Any note for us?<span style="color:red;">*</span></label>
+                    <textarea id="msg" name="message" class="form-control" placeholder="Tell us about your interest or any special request that we can do." rows="4" required="required" data-error="Leaving message is required"></textarea>
                 </div>
-                <label for="file">Geekery Image <span style="color:red;">*</span></label>
-                <div class="custom-file">
-                    
-                    <input type="file" name="fileToUpload" accept="image/*" class="custom-file-input" id="image" required="required">
-                    <label class="custom-file-label" for="file">Upload a geekery image from your PC (max. 50MB)</label>
-                </div>
-                <br>
-                <br>
                 <div>
                     <input type="submit" class="btn btn-success btn-send" value="Submit">
                 </div>
                 <div>
                     <p class="text-muted">
-                        <small>&copy; 2022 Code II Project Powered by 
-                            <a href="mailto: xyu354@wisc.edu">Xizheng Yu</a> and
-                            <a href="mailto: kshi42@wisc.edu">Kaiwen Shi</a>, Inc.</small>
+                        <small>&copy; 2022 Final Project Powered by 
+                            <a href="mailto: xyu354@wisc.edu">Xizheng Yu</a>,
+                            <a href="mailto: kshi42@wisc.edu">Kaiwen Shi</a>, and
+                            <a href="mailto: jshim27@wisc.edu">Joonbo Shim</a>, Inc.</small>
                     </p>
                 </div>
             </div>
